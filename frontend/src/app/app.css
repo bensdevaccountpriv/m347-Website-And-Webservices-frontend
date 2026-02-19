@@ -1,0 +1,28 @@
+:host {
+    height: 100%;
+    width: 100%;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 7fr 2fr;
+    overflow: auto;
+}
+
+router-outlet {
+    grid-row: 2;
+    height: auto;
+    width: auto;
+    margin: 15px;
+    overflow: auto;
+}
+
+app-header {
+    grid-row: 1;
+}
+
+app-footer {
+    grid-row: 3;
+}
