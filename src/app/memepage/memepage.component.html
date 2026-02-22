@@ -1,0 +1,10 @@
+<div class="mainframe">
+  @for(meme of memes; track $index){
+    <div class="memewrapper">
+      <img [src]="meme.url" [alt]="meme.alttext">
+      <p>{{meme.addtext}}</p>
+    </div>
+  } @empty {
+  <p>No Memes here yet</p>
+  }
+</div>

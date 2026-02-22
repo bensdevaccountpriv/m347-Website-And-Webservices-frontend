@@ -1,0 +1,43 @@
+:host {
+    background-color: #03DAC6;
+    box-shadow: 0rem 0rem 4rem 2rem #005e1f;
+}
+
+.wrapper {
+    margin: 0rem 1rem 0rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonframe {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+}
+
+button {
+    outline: none;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    background-color: #1e1e1e;
+    height: 100%;
+    width: 100%;
+    font-family: "Sansation", sans-serif;
+    color: white;
+    border-color: white;
+}
+
+.imageframe {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  height: 64px;
+  width: auto;
+}

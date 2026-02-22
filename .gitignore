@@ -1,41 +1,44 @@
-# --- Packages & Dependencies ---
-node_modules/
-dist/
-tmp/
-out-tsc/
-bazel-out/
-# --- Logs & Runtime ---
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-logs/
-*.log
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# --- Tests & Coverage ---
-/coverage/
-/reports/
-.nyc_output/
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
 
-# --- IDEs & Editors ---
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
 .vscode/*
-!.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-.idea/
-*.swp
-*.swo
-.DS_Store
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
 
-# --- Environments & Secrets ---
-.env
-.env.*
-src/environments/environment.development.ts
-src/environments/environment.ts
-
-# --- Misc ---
-.angular/
-.cache/
+# Miscellaneous
+/.angular/cache
 .sass-cache/
-connect.lock
-package-lock.json
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# System files
+.DS_Store
+Thumbs.db

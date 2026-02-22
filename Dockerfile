@@ -1,16 +1,12 @@
-FROM debian:bookworm-slim
-
-RUN apt-get update && apt-get install -y \ 
-apache2 \
-&& a2enmod rewrite \
-&& rm -rf /var/lib/apt/lists/*
-
-RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
-
-WORKDIR /var/www/html
-
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
 COPY . .
+RUN npm run build -- --configuration=production
 
+FROM nginx:alpine
+COPY --from=build /app/dist/frontend/browser /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-
-CMD ["apachectl", "-D", "FOREGROUND"]
+CMD ["nginx", "-g", "daemon off;"]
