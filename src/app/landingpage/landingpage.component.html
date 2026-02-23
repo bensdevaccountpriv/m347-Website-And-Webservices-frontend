@@ -1,1 +1,11 @@
-<p>brate test</p>
+<div class="mainframe">
+    @for(post of posts; track $index){
+    <div class="postwrapper">
+        <h2>{{post.headline}}</h2>
+        <p>{{post.text}}</p>
+        <p>{{post.author}}</p>
+    </div>
+    } @empty {
+    <p>No Posts here yet</p>
+    }
+</div>

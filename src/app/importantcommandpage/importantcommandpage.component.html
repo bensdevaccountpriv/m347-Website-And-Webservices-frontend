@@ -1,0 +1,10 @@
+<div class="mainframe">
+    @for(command of commands; track $index){
+    <div class="commandwrapper">
+        <p>Command: {{command.command}};</p>
+        <p>Description: {{command.explaination}}</p>
+    </div>
+    } @empty {
+    <p>No commands here yet</p>
+    }
+</div>
