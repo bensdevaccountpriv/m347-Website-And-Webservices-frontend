@@ -26,8 +26,8 @@ export interface Meme {
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl:string = "http://localhost:8080";
-  constructor(private http: HttpClient) {}
+  private apiUrl: string = "/api";
+  constructor(private http: HttpClient) { }
 
   getMemes(): Observable<Meme[]> {
     return this.http.get<Meme[]>(`${this.apiUrl}/memes`);
